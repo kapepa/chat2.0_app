@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./fonts.scss";
+
+:root {
+  --dark-color: oklch(0% 0 0);
+  --light-color: oklch(100% 0 0);
+  --primary-color: #AE7AFF;
+}
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: BrainsMono, sans-serif;
+  background-color: var(--dark-color);
+  color: var(--light-color);                                                                                                                                           
+}
+
+.btn {
+  border: none;
+  background: var(--primary-color);
+  color: var(--dark-color);
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.h6 {
+  font-size: 18px;
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: 400;
+}
