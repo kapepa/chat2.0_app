@@ -1,8 +1,16 @@
 <div
   class="search"
 >
-  @for(profile of profiles; track profile.id) {
-    <app-profile-card/>
+  @if (!!profiles.length) {
+    @for(profile of profiles; track profile.id) {
+      <app-profile-card
+        [profile]="profile"
+      />
+    }
+  } @else {
+    <span>
+      List is empty
+    </span>
   }
-</div>
 
+</div>

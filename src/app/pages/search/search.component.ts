@@ -14,7 +14,7 @@ import { ProfileInt } from '../../interface/profile.int';
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
 })
-export class SearchComponent {
+export class SearchComponent  {
   private profileService = inject(ProfileService);
 
   profiles: ProfileInt[] = [];
@@ -24,4 +24,5 @@ export class SearchComponent {
       this.profiles = profiles;
     })
   }
+
 }

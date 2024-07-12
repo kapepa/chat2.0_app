@@ -1,8 +1,8 @@
 <div class="profile-card">
   <div class="avatar-name">
     <img 
-      src={{profile.avatarUrl | imgUrl}} 
-      alt={{profile.username}}
+      [src]="profile.avatarUrl | imgUrl"
+      [alt]="profile.username"
       class="profile-card__avatar" 
     />
     <div class="profile-card__name">
@@ -32,8 +32,12 @@
   </div>
 
   <div class="profile-card__action-btns">
-    <button class="btn">
-      Подписать
-    </button>
+    <div
+      class="profile-card__inner-btn"
+    >
+      <button class="btn">
+        Подписать
+      </button>
+    </div>
   </div>
 </div>
