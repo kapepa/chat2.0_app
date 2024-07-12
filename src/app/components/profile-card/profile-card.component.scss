@@ -23,6 +23,15 @@
     gap: 8px;
     height: min-content;
   }
+  &__inner-btn{
+    display: flex;
+    align-items: center;
+  }
+  &__action-btns{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
 .avatar-name{

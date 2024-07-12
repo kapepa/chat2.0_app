@@ -13,6 +13,6 @@ export class ProfileService {
   constructor() { }
 
   getAccounts () {
-    return this.http.get<ProfileInt[]>(`${this.url}`)
+    return this.http.get<ProfileInt[]>(`${this.url}/user/all`)
   }
 }

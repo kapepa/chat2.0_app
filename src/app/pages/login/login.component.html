@@ -1,0 +1,48 @@
+<form
+  class="login__form"
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+>
+  <label
+    class="control__label mb-16"
+  >
+    Email
+    <input
+      id="email"
+      type="text"
+      [disabled]="isLoading"
+      class="control__input"
+      formControlName="email"
+      placeholder="Email Entry"
+    />
+  </label>
+
+  <label
+    class="control__label mb-32"
+  >
+    Password
+    <input
+      id="password"
+      type="password"
+      [disabled]="isLoading"
+      class="control__input"
+      formControlName="password"
+      placeholder="Password Entry"
+    />
+  </label>
+
+  <button
+    type="submit"
+    class="btn btn__shadow"
+
+  >
+    Sing in
+  </button>
+</form>
+
+<img
+  height="430"
+  width="430"
+  src="/assets/svg/login.svg"
+  alt="logo"
+/>
