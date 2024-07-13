@@ -15,4 +15,8 @@ export class ProfileService {
   getAccounts () {
     return this.http.get<ProfileInt[]>(`${this.url}/user/all`)
   }
+
+  getMyself () {
+    return this.http.get(`${this.url}/user/myself`)
+  }
 }

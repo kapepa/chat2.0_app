@@ -33,8 +33,17 @@ export class AuthService {
     )
   }
 
+  refreshToken() {
+    return this.http.post
+  } 
+
   get isAuth() {
     if(!this.access_token) this.access_token = this.cookieService.get('access_token');
     return !!this.access_token;
+  }
+
+  get getAccessToken() {
+    if(!this.access_token) this.access_token = this.cookieService.get('access_token');
+    return this.access_token;
   }
 }
