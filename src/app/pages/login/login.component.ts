@@ -4,7 +4,7 @@ import { ProfileService } from '../../services/profile.service';
 import { LoginFormData } from '../../interface/form-data.int';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { RoutesEnum } from '../../../enums/toutes.enum';
+import { RoutesEnum } from '../../../enums/routes.enum';
 
 @Component({
   selector: 'app-login',

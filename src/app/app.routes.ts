@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { RoutesEnum } from '../enums/toutes.enum';
+import { RoutesEnum } from '../enums/routes.enum';
 import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
