@@ -28,8 +28,8 @@ export class AuthService {
         this.access_token = access_token;
         this.refresh_token = refresh_token;
 
-        this.cookieService.set('access_token', this.access_token)
-        this.cookieService.set('refresh_token', this.refresh_token)
+        this.cookieService.set('access_token', this.access_token);
+        this.cookieService.set('refresh_token', this.refresh_token);
       })
     )
   }
