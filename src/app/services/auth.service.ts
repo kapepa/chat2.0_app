@@ -49,22 +49,22 @@ export class AuthService {
         return throwError(error);
       })
     )
-  } 
+  };
 
   logout() {
     this.access_token = null;
     this.refresh_token = null;
     this.cookieService.deleteAll();
     this.router.navigate([RoutesEnum.Login])
-  }
+  };
 
   get isAuth() {
     if(!this.access_token) this.access_token = this.cookieService.get('access_token');
     return !!this.access_token;
-  }
+  };
 
   get getAccessToken() {
     if(!this.access_token) this.access_token = this.cookieService.get('access_token');
     return this.access_token;
-  }
+  };
 }
