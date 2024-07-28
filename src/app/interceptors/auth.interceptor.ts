@@ -8,7 +8,7 @@ let isEefreshed: boolean = false;
 const refreshToken = () => {
   const authService = inject(AuthService);
 
-  return authService.refreshToken()
+  return authService.refreshToken();
 }
 
 export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
