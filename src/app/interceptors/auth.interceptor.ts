@@ -20,7 +20,7 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
           'Authorization': `Bearer ${token}`
         }
       })
-    }
+    };
 
     if (!authToken) next(req);
 
