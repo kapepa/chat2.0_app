@@ -13,10 +13,10 @@ import { RoutesEnum } from '../../enums/routes.enum';
 })
 export class AuthService {
   private url = environment.api;
-  http = inject(HttpClient)
+  http = inject(HttpClient);
   router = inject(Router);
   cookieService = inject(CookieService);
-  formDataUtil = inject(FormDataUtil)
+  formDataUtil = inject(FormDataUtil);
 
   access_token: string | null = null;
   refresh_token: string | null = null;
