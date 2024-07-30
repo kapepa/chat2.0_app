@@ -4,7 +4,8 @@
   --dark-color: oklch(0% 0 0);
   --light-color: oklch(100% 0 0);
   --primary-color: #AE7AFF;
-  --gray-color: #5F646D
+  --gray-color: #5F646D;
+  --dark-hover-color: #161616;
 }
 
 *, *::before, *::after{
@@ -89,10 +90,19 @@ body {
   margin-bottom: 16px;
 }
 
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+
 .mb-32 {
   margin-bottom: 32px;
 }
 
 .mb-60 {
   margin-bottom: 60px;
+}
+
+.ml-16 {
+  margin-left: 16px;
 }
