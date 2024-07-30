@@ -11,6 +11,9 @@
     overflow: hidden;
     object-fit: cover;
   }
+  &__subtitle{
+    align-self: baseline;
+  }
   &__name {
     display: flex;
     flex-direction: column;
