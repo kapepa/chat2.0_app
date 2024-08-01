@@ -1,0 +1,81 @@
+.profile{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  &__edit{
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__settings-ico{
+    width: 16px;
+    height: 16px;
+    fill: var(--dark-color);
+  }
+  &__body{
+    display: grid;
+    grid-gap: 64px;
+    grid-template-columns: 1fr 350px;
+    padding: 24px;
+  }
+  &__subscriber-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  &__subscriber-link{
+
+  }
+  &__subscriber-avatar{
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  &__search-link{
+    border-radius: 50%;
+    background: var(--light-color);
+    width: 24px;
+    height: 24px;
+    position: relative;
+    &::before, &::after {
+      content: "";
+      width: 2px;
+      height: 12px;
+      background-color: var(--dark-color);
+      top: 50%;
+      left: 50%;
+      position: absolute;
+    }
+    &::before {
+      transform: translateY(-50%) translateX(-50%);
+    }
+    &::after {
+      transform: translateY(-50%) translateX(-50%) rotate(90deg);
+    }
+  }
+  &__skills-wrapper{
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  &__skill-tag{
+    padding: 0 8px;
+    border-radius: 4px;
+    border: 1px solid var(--light-color);
+    display: inline;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    height: 24px;
+  }
+  &__about-yourself{
+    
+  }
+}

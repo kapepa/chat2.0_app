@@ -50,14 +50,28 @@ body {
   }
 }
 
-.h1{
+.h1 {
   font-size: 48px;
   line-height: 56px;
   font-weight: 800;
 }
 
+.h4 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 32px;
+}
+
 .h6 {
   font-size: 18px;
+}
+
+.regular {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .subtitle {
@@ -95,6 +109,11 @@ body {
 .mt-20 {
   margin-top: 20px;
 }
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
 
 .mb-16 {
   margin-bottom: 16px;
