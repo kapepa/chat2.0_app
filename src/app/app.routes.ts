@@ -19,7 +19,7 @@ export const routes: Routes = [
         component: SearchComponent,
       },
       {
-        path: RoutesEnum.Profile,
+        path: `${RoutesEnum.Profile}/:id`,
         component: ProfileComponent,
       }
     ]

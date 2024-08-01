@@ -9,8 +9,13 @@ import { BehaviorSubject, map, tap } from 'rxjs';
 })
 export class ProfileService {
   private url = environment.api;
+
   myProfile: ProfileInt | null = null;
   myProfile$: BehaviorSubject<ProfileInt | null> = new BehaviorSubject(this.myProfile);
+
+  mySubscribers: ProfileInt[] | null = null;
+  mySubscribers$: BehaviorSubject<ProfileInt[] | null> = new BehaviorSubject(this.mySubscribers);
+
   http = inject(HttpClient)
 
   constructor() { }
@@ -30,11 +35,23 @@ export class ProfileService {
 
   getSubscribers () {
     return this.http.get<ProfileInt[]>(`${this.url}/subscribe/all`).pipe(
-      map(res => res.slice(0,3))
+      map(res => {
+        this.mySubscribers = res;
+        this.mySubscribers$.next(this.mySubscribers);
+        return res.slice(0,3)
+      })
     )
+  }
+
+  getUserById (id: string) {
+    return this.http.get<ProfileInt>(`${this.url}/user/one/${id}`)
   }
 
   get getMyProfile() {
     return this.myProfile$.asObservable();
+  }
+
+  get getMySubscribers() {
+    return this.mySubscribers$.asObservable();
   }
 }

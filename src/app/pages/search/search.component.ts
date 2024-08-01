@@ -3,6 +3,8 @@ import { ProfileCardComponent } from '../../components/profile-card/profile-card
 import { ProfileService } from '../../services/profile.service';
 import { CommonModule } from '@angular/common';
 import { ProfileInt } from '../../interface/profile.int';
+import { Router } from '@angular/router';
+import { RoutesEnum } from '../../../enums/routes.enum';
 
 @Component({
   selector: 'app-search',
@@ -16,6 +18,7 @@ import { ProfileInt } from '../../interface/profile.int';
 })
 export class SearchComponent  {
   private profileService = inject(ProfileService);
+  private router = inject(Router)
 
   profiles: ProfileInt[] = [];
 
@@ -25,4 +28,7 @@ export class SearchComponent  {
     })
   }
 
+  onRouteProfile(id: string) {
+    this.router.navigate([RoutesEnum.Profile, id]);
+  }
 }

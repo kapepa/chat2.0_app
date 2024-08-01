@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProfileInt } from '../../interface/profile.int';
 import { ImgUrlPipe } from '../../pipes/img-url.pipe';
 
@@ -13,4 +13,5 @@ import { ImgUrlPipe } from '../../pipes/img-url.pipe';
 })
 export class ProfileCardComponent {
   @Input() profile!: ProfileInt;
+  @Output() onRouteProfile: EventEmitter<string> = new EventEmitter();
 }

@@ -1,4 +1,6 @@
-<div class="profile-card">
+<div class="profile-card"
+  (click)="onRouteProfile.emit(profile.id)"
+>
   <div class="avatar-name">
     <img 
       [src]="profile.avatarUrl | imgUrl"
