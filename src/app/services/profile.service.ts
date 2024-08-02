@@ -47,6 +47,10 @@ export class ProfileService {
     return this.http.get<ProfileInt>(`${this.url}/user/one/${id}`)
   }
 
+  patchProfile(form: FormData, id: string) {
+    return this.http.patch(`${this.url}/user/update/${id}`,form);
+  }
+
   get getMyProfile() {
     return this.myProfile$.asObservable();
   }
