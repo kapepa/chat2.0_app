@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LayoutMainComponent } from './layout/layout-main/layout-main.component';
 import { authGuard } from './guards/auth.guard';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,10 @@ export const routes: Routes = [
       {
         path: `${RoutesEnum.Profile}/:id`,
         component: ProfileComponent,
+      },
+      {
+        path: RoutesEnum.Settings,
+        component: SettingsComponent
       }
     ]
   },

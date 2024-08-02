@@ -1,0 +1,105 @@
+@if ( myProfile$ | async; as  profile) {
+  <div>
+    <app-profile-header
+      [profile]="profile"
+    ></app-profile-header>
+  </div>
+
+
+  <form
+    class="settings-form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  > 
+    <div
+      class="settings-form__area"
+    >
+      <div
+        class="two-columns"
+      >
+        <label
+          class="form__label"
+        >
+          <span
+            class="form__label-text"
+          >
+            First Name
+          </span>
+          <input
+            type="text"
+            class="form__input"
+            formControlName="firstName"
+          />
+        </label>
+        <label
+          class="form__label"
+        >
+          <span
+            class="form__label-text"
+          >
+            Last Name
+          </span>
+          <input
+            type="text"
+            class="form__input"
+            formControlName="lastName"
+          />
+        </label>
+      </div>
+      <label
+        class="form__label"
+      >
+        <span
+          class="form__label-text"
+        >
+          Username
+        </span>
+        <input
+          type="text"
+          class="form__input"
+          formControlName="username"
+        />
+      </label>
+      <label
+        class="form__label"
+      >
+        <span
+          class="form__label-text"
+        >
+          Description
+        </span>
+        <textarea
+          rows="4"
+          class="form__input form__textarea"
+          formControlName="description"
+        >
+        </textarea>
+      </label>
+      <label
+        class="form__label"
+      >
+        <span
+          class="form__label-text"
+        >
+          Skills
+        </span>
+        <input
+          type="text"
+          class="form__input"
+          formControlName="username"
+        />
+      </label>      
+    </div>
+
+    <div>
+      <button
+        class="btn"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+}
+
