@@ -6,6 +6,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { LayoutMainComponent } from './layout/layout-main/layout-main.component';
 import { authGuard } from './guards/auth.guard';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,15 @@ export const routes: Routes = [
       authGuard,
     ],
     children: [
+      {
+        path: '',
+        redirectTo: RoutesEnum.Home,
+        pathMatch: "full",
+      },
+      {
+        path: RoutesEnum.Home,
+        component: HomeComponent,
+      },
       {
         path: RoutesEnum.Search,
         component: SearchComponent,

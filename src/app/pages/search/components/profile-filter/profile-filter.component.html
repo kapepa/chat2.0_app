@@ -1,0 +1,49 @@
+<form
+  class="filter-form"
+  [formGroup]="form"
+> 
+  <label
+    class="form__label"
+  >
+    <span
+      class="form__label-text"
+    >
+      First Name
+    </span>
+    <input
+      type="text"
+      class="form__input"
+      formControlName="firstName"
+    />
+  </label>
+
+  <label
+    class="form__label"
+  >
+    <span
+      class="form__label-text"
+    >
+      Last Name
+    </span>
+    <input
+      type="text"
+      class="form__input"
+      formControlName="lastName"
+    />
+  </label>
+
+  <label
+    class="form__label"
+  >
+    <span
+      class="form__label-text"
+    >
+      Skills
+    </span>
+    <input
+      type="text"
+      class="form__input"
+      formControlName="stack"
+    />
+  </label>      
+</form>

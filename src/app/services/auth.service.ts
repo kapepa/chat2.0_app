@@ -67,4 +67,8 @@ export class AuthService {
     if(!this.access_token) this.access_token = this.cookieService.get('access_token');
     return this.access_token;
   };
+
+  get getRefreshToken() {
+    return this.refresh_token;
+  }
 }

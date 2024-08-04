@@ -14,6 +14,8 @@
       <a
         class="main-menu__item"
         [routerLink]="['/']"
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="main-menu__item--active"
       >
         <svg 
           xmlns="http://www.w3.org/2000/svg"  
@@ -33,6 +35,8 @@
       <a
         class="main-menu__item"
         [routerLink]="['/chat']"
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="main-menu__item--active"
       >
         <svg 
           data-name="Layer 1" 
@@ -53,6 +57,8 @@
       <a
         class="main-menu__item"
         [routerLink]="['/search']"
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="main-menu__item--active"
       >
         <svg 
           version="1.1"
