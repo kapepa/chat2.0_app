@@ -1,17 +1,20 @@
+<app-profile-filter></app-profile-filter>
+
 <div
   class="search"
 >
-  @if (!!profiles.length) {
-    @for(profile of profiles; track profile.id) {
-      <app-profile-card
-        [profile]="profile"
-        (onRouteProfile)="onRouteProfile($event)"
-      />
+  @if(profiles() ; as profiles) {
+    @if (!!profiles.length) {
+      @for(profile of profiles; track profile.id) {
+        <app-profile-card
+          [profile]="profile"
+          (onRouteProfile)="onRouteProfile($event)"
+        />
+      }
+    } @else {
+      <span>
+        List is empty
+      </span>
     }
-  } @else {
-    <span>
-      List is empty
-    </span>
   }
-
 </div>

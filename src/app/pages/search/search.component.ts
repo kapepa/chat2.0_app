@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ProfileInt } from '../../interface/profile.int';
 import { Router } from '@angular/router';
 import { RoutesEnum } from '../../../enums/routes.enum';
+import { ProfileFilterComponent } from './components/profile-filter/profile-filter.component';
 
 @Component({
   selector: 'app-search',
@@ -12,6 +13,7 @@ import { RoutesEnum } from '../../../enums/routes.enum';
   imports: [
     CommonModule,
     ProfileCardComponent,
+    ProfileFilterComponent,
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
@@ -20,12 +22,12 @@ export class SearchComponent  {
   private profileService = inject(ProfileService);
   private router = inject(Router)
 
-  profiles: ProfileInt[] = [];
+  profiles = this.profileService.filteredProfiles;
 
   constructor() {
-    this.profileService.getAccounts().subscribe((profiles) => {
-      this.profiles = profiles;
-    })
+    // this.profileService.getAccounts().subscribe((profiles) => {
+    //   this.profiles = profiles;
+    // })
   }
 
   onRouteProfile(id: string) {

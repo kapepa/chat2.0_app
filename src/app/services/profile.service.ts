@@ -1,14 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { ProfileInt } from '../interface/profile.int';
 import { environment } from '../../environment/environment';
 import { BehaviorSubject, map, tap } from 'rxjs';
+import { FilterProfilesDto } from '../dto/filter-profiles.dto';
+import { setHttpParams } from '../utils/http-params';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
   private url = environment.api;
+
+  filteredProfiles = signal<ProfileInt[]>([]);
 
   myProfile: ProfileInt | null = null;
   myProfile$: BehaviorSubject<ProfileInt | null> = new BehaviorSubject(this.myProfile);
@@ -49,6 +53,15 @@ export class ProfileService {
 
   patchProfile(form: FormData, id: string) {
     return this.http.patch(`${this.url}/user/update/${id}`,form);
+  }
+
+  filterProfiles(dto: FilterProfilesDto) {
+    const params = setHttpParams<FilterProfilesDto>(dto)
+    return this.http.get<ProfileInt[]>(`${this.url}/user/find`, { params }).pipe(
+      tap((profiles) => {
+        this.filteredProfiles.set(profiles)
+      })
+    );
   }
 
   get getMyProfile() {
